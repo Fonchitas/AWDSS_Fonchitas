@@ -1,25 +1,98 @@
-/* RESET + VARIABLES */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* index.css — Base, variables, hero background, reset */
+
+:root{
+  --page-bg: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+  --muted: #6b6f78;
+  --text: #0b1220;
+  --glass-bg: rgba(255,255,255,0.55); /* pearly glass */
+  --glass-border: rgba(255,255,255,0.65);
+  --glass-blur: 14px;
+  --card-radius: 16px;
+  --card-shadow: 0 8px 40px rgba(12,14,20,0.06);
+  --accent-pink: rgba(255,150,200,0.95); /* warmer pink */
+  --accent-pink-soft: rgba(255,180,210,0.85); /* subtle */
+  --accent-cyan: rgba(125,211,252,0.9);
+  --container: 1160px;
+  --gap: 1.25rem;
 }
 
-:root {
-  --bg: #f5f5f5;
-  --text: #1b1b1b;
-  --accent: #007aff;
-  --badge-node: #ffb703;
-  --badge-no-node: #27ae60;
-  --badge-ruby: #c0392b;
-  --badge-standalone: #16a085;
-  --shadow: rgba(0, 0, 0, 0.08);
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  background-color: var(--bg);
+/* Reset */
+* { box-sizing: border-box; }
+html,body { height:100%; }
+body{
+  margin:0;
+  font-family: 'Inter', -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--page-bg);
   color: var(--text);
-  padding: 2rem;
-  line-height: 1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  -webkit-text-size-adjust:100%;
+}
+
+/* Layout container shared */
+.main-wrap{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+}
+
+/* Basic heading styles */
+h1{ font-weight:700; font-size: clamp(1.6rem, 3.4vw, 2.6rem); margin:0; letter-spacing: -0.01em; color: var(--text); }
+h2{ font-weight:600; font-size:1.1rem; color:var(--text); margin:0 0 1rem 0; }
+h3{ font-weight:600; font-size:1rem; margin:0; color:var(--text); }
+
+/* Basic nav */
+/* Navbar fixed and glass effect */
+.site-nav{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display:flex;
+  justify-content:center;
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(12,14,20,0.05);
+  padding: 0.6rem 0;
+}
+.site-nav ul{ display:flex; gap:1rem; list-style:none; margin:0; padding:0; }
+.site-nav a{ color: var(--muted); font-weight:600; text-decoration:none; padding:0.45rem 0.6rem; border-radius:10px; transition: background 0.22s, color 0.22s; }
+.site-nav a:hover{ color: var(--text); background: rgba(255,180,210,0.12); }
+
+/* Hero canvas fill */
+
+/* Section titles */
+.section{ margin-bottom: 2.5rem; }
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap);
+}
+@media (max-width:1000px){ .grid{ grid-template-columns: 1fr; } }
+
+/* Badge */
+.badge{
+  display:inline-block;
+  padding:0.26rem 0.6rem;
+  border-radius: 999px;
+  font-weight:700;
+  font-size:0.78rem;
+  background: rgba(255,255,255,0.95);
+  color:#081421;
+  margin-left:0.6rem;
+}
+
+/* small helper */
+.section-title{ margin:0 0 1rem 0; }
+
+/* Footer */
+footer{ text-align:center; padding:2.25rem 1rem; color:var(--muted); font-size:0.95rem; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  * { transition: none !important; animation: none !important; }
 }

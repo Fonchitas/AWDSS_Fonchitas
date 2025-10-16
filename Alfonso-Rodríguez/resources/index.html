@@ -1,144 +1,252 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Herramientas Modernas de Diseño Web</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Web Design Tools Reference – Fonchitas</title>
 
-  <!-- Enlaces CSS -->
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="../assets/index.css">
   <link rel="stylesheet" href="../assets/resources.css">
- <!-- Fuente moderna -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-<button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
-  <section class="hero">
-    <header>
-      <h1>Classic and Modern Web Design Tools (2025)</h1>
-      <p>Created by Alfonso Rodríguez de Rivas (Fonchitas)</p>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="#css-frameworks">CSS Frameworks</a></li>
-        <li><a href="#component-libraries">Component Libraries</a></li>
-        <li><a href="#static-site-generators">Static Site Generators</a></li>
-        <li><a href="#animation-libraries">Animation Libraries</a></li>
-        <li><a href="#templates">Templates & UI Kits</a></li>
-        <li><a href="#reflection">Critical Reflection</a></li>
-      </ul>
-    </nav>
-    <div class="scroll-down">
-  <button aria-label="Scroll down" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})">
-    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" opacity="0.15"/><path d="M8 10l4 4 4-4" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
-</div>
-  </section>
-  <main>
 
-    <section id="css-frameworks">
-      <h2>CSS Frameworks</h2>
+  <!-- HERO / COVER -->
+  <header class="hero">
+    <div class="hero-ambient" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1>Classic and Modern Web Design Tools</h1>
+      <p class="hero-sub">A personal, practical reference by Alfonso Rodríguez de Rivas (Fonchitas)</p>
+      <button class="scroll-cta" aria-label="Scroll to tools">Explore tools</button>
+    </div>
+    <div class="hero-frost"></div>
+     <!-- SVG Animated Shapes -->
+  <svg class="hero-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+    <circle class="svg-shape" cx="200" cy="200" r="60" fill="rgba(255,180,210,0.25)" />
+    <circle class="svg-shape" cx="400" cy="300" r="100" fill="rgba(230,200,255,0.25)" />
+    <circle class="svg-shape" cx="600" cy="150" r="80" fill="rgba(125,211,252,0.25)" />
+  </svg>
+  </header>
 
-      <article>
-        <h3>Bootstrap <span class="badge node">🌐 No Node.js</span></h3>
-        <p>Bootstrap is kind of a classic. It was one of the first things I heard about when I started learning web design, and even though there are newer tools now, it’s still useful. I like how it helps you build layouts quickly without getting too complicated.
-        That said, a lot of websites made with Bootstrap tend to look pretty similar, so I’d only use it for quick projects or when I just need something clean and functional. It’s practical, but not very flexible when it comes to creativity.</p>
-      </article>
+  <nav class="site-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="#css-frameworks">CSS Frameworks</a></li>
+      <li><a href="#component-libraries">Component Libraries</a></li>
+      <li><a href="#static-site-generators">Static Site Generators</a></li>
+      <li><a href="#animation-libraries">Animation Libraries</a></li>
+      <li><a href="#templates">Templates & UI Kits</a></li>
+      <li><a href="#reflection">Critical Reflection</a></li>
+    </ul>
+  </nav>
 
-      <article>
-        <h3>TailwindCSS <span class="badge node">📦 Requires Node.js</span></h3>
-        <p>TailwindCSS is honestly amazing. I love how it gives you full control of the design directly from the HTML, you can shape everything exactly how you want. At first, the utility classes can be overwhelming, but once you get the hang of it, it’s actually super intuitive.
-        It fits really well with how I like to work: I enjoy tweaking the visual details and building something that feels like mine. Plus, it’s perfect if you want to mix it with motion or more artistic layouts.</p>
+  <main class="main-wrap" id="content">
+    <section id="css-frameworks" class="section">
+      <h2 class="section-title">CSS Frameworks</h2>
+
+      <div class="grid">
+        <article class="glass-card glow-follow">
+          <h3>Bootstrap <span class="badge">No Node.js</span></h3>
+          <p>Bootstrap is kind of a classic. It was one of the first things I heard about when I started learning web design, and even though there are newer tools now, it is still useful. I like how it helps you build layouts quickly without getting too complicated. The grid system is intuitive, and the pre-built components like buttons, modals, and navbars make things really fast to set up. It is especially helpful for students or anyone who wants to get something functional online in just a few hours.</p>
+          <p>That said, a lot of websites made with Bootstrap tend to look pretty similar, especially when people stick to the default themes. For me, it is a good option for small or practical projects, like a university assignment or a client portfolio that needs to be finished fast. But for something more creative or visually unique, I would rather use tools that give me more freedom over the design. Still, I appreciate how stable and well documented Bootstrap is. It is a great safety net when you need to build something that just works.</p>
+          <img src="../assets/images/Bootstrap.png" alt="Bootstrap example" class="section-image">
+        </article>
+
+        <article class="glass-card glow-follow">
+          <h3>TailwindCSS <span class="badge node">Requires Node.js</span></h3>
+          <p>TailwindCSS is honestly amazing. I love how it gives you full control of the design directly from the HTML. You can shape everything exactly how you want. At first, the utility classes can be overwhelming because there are so many, but once you get used to the logic, it becomes really natural. I like that you do not have to jump back and forth between HTML and CSS files constantly; everything happens in one place. It feels very modular and creative at the same time.</p>
+          <p>What I really love is how Tailwind combines perfectly with other tools like Shadcn UI or Flowbite. For example, you can create something minimal and aesthetic but still functional. I have seen a lot of modern portfolios, agencies, and product websites built with it. They look clean, confident, and very adaptable to different devices. It is definitely a tool I want to keep mastering because it fits my way of working: designing by feeling, experimenting, and refining little details until it feels right.</p>
+          <img src="../assets/images/tailwind.png" alt="tailwind example" class="section-image">
+        </article>
+      </div>
+    </section>
+
+    <section id="component-libraries" class="section">
+      <h2 class="section-title">Component Libraries</h2>
+
+      <div class="grid">
+        <article class="glass-card glow-follow">
+          <h3>Material UI <span class="badge node">Requires Node.js</span></h3>
+          <p>Material UI gives me a sense of order and structure. It is clean and professional, and it has that typical Google product feeling. Everything looks balanced, readable, and intuitive. I like how it takes care of accessibility and responsive behavior, which can sometimes be tricky to manage by hand. It is great for projects where clarity and consistency matter, like dashboards, apps, or client websites that follow corporate guidelines.</p>
+          <p>However, it can also feel a bit too rigid visually. The design language is very recognizable, so it is harder to make it look truly yours. Still, I appreciate how much it helps with workflow. You can combine it with other tools like Next.js or React to build complex interfaces faster. I would use it for serious, structured projects where functionality and reliability are more important than experimenting visually.</p>
+          <img src="../assets/images/Material UI.png" alt="Material UI example" class="section-image">
+        </article>
+
+        <article class="glass-card glow-follow">
+          <h3>Shadcn UI <span class="badge node">Requires Node.js</span></h3>
+          <p>Shadcn UI feels much more modern and customizable. It is built to work beautifully with TailwindCSS, which I love. The components feel lighter and more personal. You can adapt them without breaking the structure. I really like its focus on simplicity, spacing, and clean typography, which aligns a lot with my design preferences. It reminds me of the aesthetics of modern creative studios that mix clarity with personality.</p>
+          <p>Using it, I feel more in control. It lets me design components that match my own style, minimal but expressive. It is also open source and constantly evolving, which is inspiring. I would use Shadcn UI for portfolio projects or web designs where the visual language really matters, and I want to balance practicality with creativity. It is basically the type of library that lets your personal design identity shine through the code.</p>
+          <img src="../assets/images/shadn.png" alt="shadn example" class="section-image">
+        </article>
+      </div>
+    </section>
+
+    <section id="static-site-generators" class="section">
+      <h2 class="section-title">Static Site Generators</h2>
+
+      <div class="grid">
+        <article class="glass-card glow-follow">
+          <h3>Jekyll <span class="badge ruby">Requires Ruby</span></h3>
+          <p>Jekyll is one of those tools that helped shape how we think about static websites today. I like that it is simple, reliable, and works really well with GitHub Pages. You can write your site in Markdown and focus on the content instead of worrying about databases or hosting. It is perfect for small blogs or documentation projects, where you just want to write and publish without too many technical steps.</p>
+          <p>I do not love the Ruby setup because it feels a bit old school compared to Node.js based tools, but I respect its stability. It has been around for years, and a lot of designers still use it for personal blogs or portfolios. I could see myself using it if I wanted to create a minimal site that focuses entirely on text and storytelling, something that does not need animations or dynamic features but feels calm and intentional.</p>
+          <img src="../assets/images/Jekyll.png" alt="Jekyll example" class="section-image">
+        </article>
+
+        <article class="glass-card glow-follow">
+          <h3>Hugo <span class="badge standalone">Standalone</span></h3>
+          <p>Hugo feels like a refreshing alternative. It is super fast and does not depend on Node.js, which makes it easier to set up and maintain. I really like tools that just work straight away. You do not have to fight with dependencies or installs. It is great for portfolios, blogs, or creative journals where speed and simplicity are the priority.</p>
+          <p>I also like that it is written in Go, which makes it incredibly efficient. You can build large sites instantly. I think Hugo would be ideal for something like a personal archive of projects, photos, or writings, something lightweight but elegant. It does not have as much visual flexibility as Tailwind, but its structure and performance make it a very practical choice for clean, content driven sites.</p>
+          <img src="../assets/images/Hugo.png" alt="Hugo example" class="section-image">
+        </article>
+      </div>
+    </section>
+
+    <section id="animation-libraries" class="section">
+      <h2 class="section-title">Animation Libraries</h2>
+
+      <div class="grid">
+        <article class="glass-card glow-follow">
+          <h3>GSAP <span class="badge">No Node.js</span></h3>
+          <p>GSAP is one of my favorite animation tools. I love how it makes motion feel intentional. It is not about throwing random effects, it is about bringing meaning to the interface. You can do smooth transitions, scroll based animations, or subtle movements that make a design come alive. And the best part is you can just add it with a simple script tag from a CDN, no setup needed.</p>
+          <p>I have seen GSAP used in websites for creative agencies and musicians where the animation tells part of the story. I would love to experiment with it more in my own projects, maybe for my music portfolio or visual storytelling experiments. It feels like a bridge between design and rhythm. It adds that sense of flow I always look for when I mix visual and musical ideas.</p>
+          <img src="../assets/images/Gsap.png" alt="GSAP example" class="section-image">
+        </article>
+
+        <article class="glass-card glow-follow">
+          <h3>Framer Motion <span class="badge node">Requires Node.js</span></h3>
+          <p>Framer Motion feels like the future of web motion. It is smooth, elegant, and deeply integrated with React. I like how natural its transitions look. Everything moves with purpose and precision. It is the kind of animation that does not distract you but enhances the user experience.</p>
+          <p>Even though I am still learning React, I can see how powerful this tool can be. You can animate routes, components, and even page transitions effortlessly. It gives that feeling of professional polish that you see in modern interfaces. I think I would use Framer Motion for a personal portfolio or a brand project, where I want the user to feel that flow between sections.</p>
+          <img src="../assets/images/motion.png" alt="motion example" class="section-image">
+        </article>
+      </div>
+    </section>
+
+    <section id="templates" class="section">
+      <h2 class="section-title">Templates and UI Kits</h2>
+
+      <div class="grid">
+        <article class="glass-card glow-follow">
+          <h3>HTML5 UP <span class="badge">No Node.js</span></h3>
+          <p>HTML5 UP is perfect for quick, good looking setups. You can grab a template, open it in your browser, and it already looks great. There is something satisfying about how accessible it is. You do not need Node.js, Git, or any complex setup. It is ideal for personal sites, portfolios, or simple event pages where you just want to focus on the message rather than the backend.</p>
+          <p>I also like that their templates are free and open source, with beautiful design consistency. Some of them have this nostalgic early web charm but still feel clean and modern. I think it is a great way to start experimenting with layouts and understanding responsive behavior without getting lost in technical details. It is a great learning resource too.</p>
+          <img src="../assets/images/Html5.png" alt="Html5 example" class="section-image">
+        </article>
+
+        <article class="glass-card glow-follow">
+          <h3>Flowbite <span class="badge node">Requires Node.js</span></h3>
+          <p>Flowbite feels more up to date and integrates perfectly with TailwindCSS, which makes everything consistent visually. The components like navbars, cards, dropdowns, or modals look professional and adaptable. I appreciate how customizable it is. You can start with something prebuilt and tweak it until it fits your own design system.</p>
+          <p>I could see myself using Flowbite for a portfolio or a small client project where I want a modern and clean look without spending hours coding every element from scratch. It is practical but still gives enough creative room to make something unique. It feels like the best of both worlds: pre made structure with personal freedom.</p>
+          <img src="../assets/images/Flowbite.png" alt="Flowbite example" class="section-image">
+        </article>
+      </div>
+    </section>
+
+    <section id="reflection" class="section">
+      <h2 class="section-title">Critical Reflection (ATELIER)</h2>
+
+      <article class="glass-card glow-follow" aria-labelledby="reflection-heading">
+        <h3 id="reflection-heading">My thoughts</h3>
+        <p>After exploring all these tools, I have realized that I work best with the ones that give me creative freedom, like TailwindCSS and Shadcn UI. I enjoy being able to adjust everything visually and build something that feels like my own. I have always been drawn to projects that balance structure with experimentation, where you can design freely but still rely on a solid foundation.</p>
+        <p>I also understand the value of frameworks like Bootstrap or Material UI, especially when structure and usability come first. They are lifesavers when you need to deliver something fast and consistent. But personally, I am more motivated by design systems that leave room for discovery and customization. That is why tools like Tailwind and GSAP excite me. They let me mix precision with emotion.</p>
+        <p>Finding the balance between simplicity and flexibility is key for me. Sometimes the simplest tools, like HTML5 UP or Hugo, let me focus on content and storytelling. Other times, tools like Tailwind or Framer Motion give me the freedom to express a visual rhythm or personality through design. In the end, I see these tools like instruments. Each one fits a different song. Depending on the project, I can choose whether I want something more technical, more expressive, or a bit of both. That is the creative part I enjoy the most.</p>
       </article>
     </section>
 
-    <section id="component-libraries">
-      <h2>Component Libraries</h2>
-
-      <article>
-        <h3>Material UI <span class="badge node">📦 Requires Node.js</span></h3>
-        <p>Material UI gives me a sense of order and structure. It’s clean and professional, and it has that typical Google product feeling, very functional and balanced.
-        It’s great for projects where clarity and consistency matter, but sometimes it feels a bit too strict visually. I’d use it for serious or client-oriented projects, where function and accessibility are more important than visual experimentation.</p>
-      </article>
-
-      <article>
-        <h3>Shadcn UI <span class="badge node">📦 Requires Node.js</span></h3>
-        <p>Shadcn UI feels much more modern and customizable. I love that it works perfectly with Tailwind and still lets you design your components your own way.
-        The style really fits the kind of visual identity I like, minimalist, clean, and with attention to typography and space. It’s the kind of tool I’d use when I want a project to feel personal and refined at the same time.</p>
-      </article>
-    </section>
-
-    <section id="static-site-generators">
-      <h2>Static Site Generators</h2>
-
-      <article>
-        <h3>Jekyll <span class="badge ruby">🟥 Requires Ruby</span></h3>
-        <p>Jekyll is interesting mainly because it’s one of the pioneers in static site generation and works easily with GitHub Pages.
-        I don’t love the Ruby setup part, but I like the idea of having a lightweight website without databases or complex systems. It’s perfect for something like a simple blog or documentation. Visually it’s not as flexible, but I can appreciate its simplicity.</p>
-      </article>
-
-      <article>
-        <h3>Hugo <span class="badge standalone">🟢 Standalone</span></h3>
-        <p>Hugo feels like a refreshing alternative, fast, simple, and independent from Node.js. I like tools like this that just work and don’t need too much setup.
-        It’s ideal for small personal projects or portfolios that focus on content rather than complex functionality. It might not have as many styling options, but its speed and minimalism are really appealing.</p>
-      </article>
-    </section>
-
-    <section id="animation-libraries">
-      <h2>Animation Libraries</h2>
-
-      <article>
-        <h3>GSAP <span class="badge node">🌐 No Node.js</span></h3>
-        <p>GSAP is one of my favorites. I love how motion can bring a website to life without making it feel overloaded, and GSAP gives you that level of creative control.
-        It’s nice that you can use it straight from a CDN, no installation needed. I’d use it to add small, meaningful animations to a personal project or portfolio, especially when I want to give a dynamic and expressive feeling to the visuals.</p>
-      </article>
-
-      <article>
-        <h3>Framer Motion <span class="badge node">📦 Requires Node.js</span></h3>
-        <p>Framer Motion feels smoother and more modern, especially for React projects. I like how natural its transitions look, it’s the kind of motion that feels designed.
-        Even though I’m not a React expert yet, I’d love to learn more about it. It’s perfect for when I want my design to have that fluid, seamless experience, the kind of detail that makes a site feel professional and well thought out.</p>
-      </article>
-    </section>
-
-    <section id="templates">
-      <h2>Templates and UI Kits</h2>
-
-      <article>
-        <h3>HTML5 UP <span class="badge node">🌐 No Node.js</span></h3>
-        <p>HTML5 UP is perfect for quick, good-looking setups. You can grab a template and start building right away, no installation or complex setup needed.
-        I like that it’s so accessible and visually solid. It’s ideal for student projects or personal sites where I want to focus on the message rather than the technical side. It’s the type of tool that helps me move fast and still make something that looks good.</p>
-      </article>
-
-      <article>
-        <h3>Flowbite <span class="badge node">📦 Requires Node.js</span></h3>
-        <p>Flowbite feels more up-to-date and works really well with TailwindCSS, which makes it consistent visually.
-        I like how the components are ready to use but still customizable. Even though it needs Node.js, I don’t really mind, it gives you more control in the end. It’s the kind of kit I’d use for a modern, clean website that needs to look professional but still have some personality.</p>
-      </article>
-    </section>
-
-    <section id="reflection">
-      <h2>Critical Reflection (ATELIER)</h2>
-      <p>After exploring all these tools, I’ve realized that I work best with the ones that give me creative freedom, like TailwindCSS and Shadcn UI. I enjoy being able to adjust everything visually and build something that feels like my own.
-      I also understand the value of frameworks like Bootstrap or Material UI, especially when structure and usability come first, but personally, I’m more motivated by design systems that leave room for experimentation.</p>
-
-      <p>Finding the balance between simplicity and flexibility is key for me. Sometimes the simplest tools, like HTML5 UP or Hugo, let me focus on the content and storytelling, while others, like Tailwind or Framer Motion, give me room to explore and refine the visual experience.</p>
-
-      <p>In the end, I see these tools like instruments, each one fits a different song. Depending on the project, I can choose whether I want something more technical, more expressive, or a bit of both. That’s the creative part I enjoy the most.</p>
-    </section>
-
+    
   </main>
 
   <footer>
     <p>© 2025 Fonchitas – Web Atelier (UDIT)</p>
   </footer>
-  <script>
-    const btn = document.getElementById('dark-mode-toggle');
-    btn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+
+  <!-- Glow-follow script and small interactions -->
+    <script>
+  (function(){
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    // Smooth scroll from hero CTA
+    const cta = document.querySelector('.scroll-cta');
+    if(cta){
+      cta.addEventListener('click', ()=>{
+        document.getElementById('content').scrollIntoView({behavior:'smooth'});
+      });
+    }
+
+    // Glow-follow cards
+    const cards = document.querySelectorAll('.glass-card.glow-follow');
+    function onMove(e, el){
+      const rect = el.getBoundingClientRect();
+      const x = ((e.clientX - rect.left)/rect.width)*100;
+      const y = ((e.clientY - rect.top)/rect.height)*100;
+      el.style.setProperty('--gx', x+'%');
+      el.style.setProperty('--gy', y+'%');
+      el.style.setProperty('--hover',1);
+    }
+    cards.forEach(card=>{
+      card.addEventListener('mousemove', ev=>onMove(ev,card));
+      card.addEventListener('mouseleave', ()=>{ card.style.setProperty('--gx','50%'); card.style.setProperty('--gy','50%'); card.style.setProperty('--hover',0); });
     });
+
+    
+// Smooth scroll for navbar links
+document.querySelectorAll('.site-nav a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    if(targetSection){
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+  })();
+  
   </script>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<canvas class="hero-canvas-3d"></canvas>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script>
+  // Animate SVG shapes
+  const shapes = document.querySelectorAll('.svg-shape');
+
+  shapes.forEach((shape, i) => {
+    gsap.to(shape, {
+      duration: 8 + Math.random() * 4,
+      x: '+=50',
+      y: '+=30',
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      delay: i * 0.5
+    });
+  });
+
+  // React to mouse movement for slight parallax
+  const hero = document.querySelector('.hero');
+  hero.addEventListener('mousemove', e => {
+    const rect = hero.getBoundingClientRect();
+    const mouseX = (e.clientX - rect.left) / rect.width - 0.5;
+    const mouseY = (e.clientY - rect.top) / rect.height - 0.5;
+
+    shapes.forEach((shape, i) => {
+      gsap.to(shape, {
+        x: mouseX * 50 * (i+1),
+        y: mouseY * 30 * (i+1),
+        duration: 0.8,
+        ease: "sine.out"
+      });
+    });
+  });
+</script>
 
 </body>
 

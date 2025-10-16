@@ -1,412 +1,175 @@
-:root {
-  --accent: #0984e3;
-  --shadow: rgba(9, 132, 227, 0.08);
-  --badge-node: #4ec8d8;
-  --badge-no-node: #3300ff;
-  --badge-ruby: #d63031;
-  --badge-standalone: #00b894;
-  --bg: #f5f6fa;
-  --text: #2d3436;
-  --card-bg: #fff;
-  --transition: 0.3s cubic-bezier(.4,0,.2,1);
+/* resources.css — hero, glass cards, pink glow, layout specifics */
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+  background: linear-gradient(180deg,#ffffff,#fbfbfd);
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  transition: background var(--transition), color var(--transition);
-  min-height: 100vh;
-  cursor: url('https://cdn.jsdelivr.net/gh/alfonsorodriguezderivasalonso/AWDWSS/AWDSS_Fonchitas/assets/cursor-modern.svg'), pointer;
-  /* Use your own SVG or PNG for a custom cursor */
-  overflow-x: hidden;
-}
-
-header {
-  margin-top: 5vh;
-  text-align: center;
-  animation: fadeDown 1s cubic-bezier(.4,0,.2,1);
-}
-
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-30px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-header h1 {
-  font-size: 2.4rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  background: linear-gradient(90deg, #0984e3 40%, #00b894 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 0.5rem;
-  animation: fadeDown 1.2s cubic-bezier(.4,0,.2,1);
-}
-
-header p {
-  color: #636e72;
-  font-size: 1.05rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  opacity: 0.85;
-  animation: fadeDown 1.4s cubic-bezier(.4,0,.2,1);
-}
-
-/* ...existing code... */
-
-/* Importa una fuente moderna y arriesgada para el título */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@300;500;700&display=swap');
-
-/* ...existing code... */
-
-/* HERO con degradado animado de azules claritos */
-/* ...existing code... */
-
-.hero {
-  min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.hero-inner{
   position: relative;
-  z-index: 1;
-  overflow: hidden;
-  animation: fadeIn 1.2s cubic-bezier(.4,0,.2,1);
-  background: linear-gradient(120deg, #ff0088 0%, #ffffff 40%, #ff3d3d 70%, #ffcc00 100%);
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease-in-out infinite;
+  z-index:2;
+  text-align:center;
+  max-width:960px;
+  padding:3.5rem 1.25rem;
 }
 
-body.dark-mode .hero {
-  background: linear-gradient(120deg, #10009e 0%, #0c7c7c 40%, #0c356a 70%, #260366 100%);
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease-in-out infinite;
+/* Hero layers */
+.hero-canvas{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:0;
 }
 
-@keyframes gradientMove {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-/* ...existing code... */
-
-/* Título negro en modo claro, blanco en modo oscuro */
-@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
-
-/* ...existing code... */
-
-.hero h1 {
-  font-family:'Plus Jakarta Sans', 'Montserrat', 'Inter', Arial, sans-serif;
-  font-size: 3.2rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: #181a20;
-  text-transform: uppercase;
-  margin-bottom: 0.7rem;
-  animation: fadeDown 1.2s cubic-bezier(.4,0,.2,1);
-  text-shadow: none;
-}
-
-body.dark-mode .hero h1 {
-  color: #fff;
-}
-
-/* ...existing code... */
-
-.hero p {
-  color: #000000;
-  font-size: 1.15rem;
-  font-weight:400;
-  margin-bottom: 0.5rem;
-  opacity: 0.92;
-  animation: fadeDown 1.4s cubic-bezier(.4,0,.2,1);
-  font-family: 'Inter', Arial, sans-serif;
-}
-
-body.dark-mode .hero p {
-  color: #e3f0ff;
-}
-
-/* ...resto de tu código... */
-/* Nuevo botón scroll elegante */
-.scroll-down {
+.hero-svg {
   position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0; /* encima del canvas pero debajo del frost */
 }
 
-.scroll-down button {
-  background: rgba(9,132,227,0.85);
+.hero-frost{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background: rgba(255,255,255,0.22);
+  backdrop-filter: blur(8px);
+  z-index:0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 3; /* contenido siempre arriba */
+}
+
+/* CTA */
+.scroll-cta{
+  margin-top: 1.4rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: 12px;
   border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 16px rgba(9,132,227,0.15);
-  cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
-  outline: none;
-  animation: bounce 1.5s infinite;
+  font-weight:700;
+  background: linear-gradient(90deg, rgba(255,190,220,0.95), rgba(255,150,200,0.95));
+  color: #081421;
+  box-shadow: 0 8px 30px rgba(255,150,200,0.12);
+  cursor:pointer;
+  transition: transform 220ms ease, box-shadow 220ms ease, opacity 180ms;
 }
+.scroll-cta:hover{ transform: translateY(-4px); box-shadow: 0 14px 40px rgba(255,150,200,0.18); }
 
-.scroll-down button:hover {
-  background: #00b894;
-  box-shadow: 0 8px 32px rgba(0,184,148,0.18);
-}
-
-.scroll-down button svg {
-  width: 24px;
-  height: 24px;
-  fill: #fff;
-}
-
-/* Elimina el antiguo span de scroll-down */
-.scroll-down span {
-  display: none;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0);}
-  50% { transform: translateY(12px);}
-}
-
-/* Cursor circular moderno */
-body {
-  cursor: url('https://cdn.jsdelivr.net/gh/alfonsorodriguezderivasalonso/AWDWSS/AWDSS_Fonchitas/assets/cursor-circle.svg') 16 16, auto;
-}
-
-/* ...existing code... */
-/* El resto del contenido (main) empieza debajo del hero */
-main {
+/* MAIN WRAP adjustments to visually separate from hero */
+.main-wrap{
+  margin-top: -40px;
+  padding-top: 60px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.7));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(11,16,30,0.06);
   position: relative;
-  z-index: 2;
-  background: var(--bg);
-  margin-top: 0;
-  padding-top: 2rem;
+  z-index:2;
 }
 
-
-
-
-
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.2rem;
-  padding: 1.2rem;
-  margin: 0;
+/* GLASS CARD BASE */
+.glass-card{
+  position:relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.62), rgba(255,255,255,0.45));
+  border-radius: var(--card-radius);
+  padding: 1.4rem;
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  overflow: visible;
+  transition: transform 280ms cubic-bezier(.2,.9,.2,1), box-shadow 280ms, border-color 220ms;
 }
 
-nav li {
-  display: flex;
-  align-items: center;
-  /* Elimina cualquier ancho fijo */
+/* lift */
+.glass-card:hover{
+  transform: translateY(-10px) scale(1.002);
+  border-color: rgba(255,200,220,0.7);
+  box-shadow: 0 30px 80px rgba(11,16,30,0.08);
 }
 
-nav a {
-  display: inline-block;
-  text-decoration: none;
-  color: var(--accent);
-  font-weight: 500;
-  font-size: 1.08rem;
-  padding: 0.4rem 1.2rem;
-  border-radius: 8px;
-  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
-  position: relative;
-  background: transparent;
-  box-shadow: none;
-  width: auto; /* Evita que ocupe todo el ancho del li */
+/* rim soft glow using ::before */
+.glass-card::before{
+  content:"";
+  position:absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  z-index:0;
+  pointer-events:none;
 }
 
-nav a:hover {
-  color: #fff;
-  background: var(--accent);
-  box-shadow: 0 2px 8px var(--shadow);
-  z-index: 1; /* Asegura que el hover esté por encima */
+/* animated pink outer glow using ::after */
+.glass-card::after{
+  content:"";
+  position:absolute;
+  inset:-8px;
+  border-radius: inherit;
+  z-index:-1;
+  pointer-events:none;
+  background: radial-gradient(circle at var(--gx,50%) var(--gy,50%), rgba(255,180,210,var(--hover,0)), rgba(255,150,200,0.06) 20%, transparent 38%),
+              conic-gradient(from 120deg, rgba(255,180,210,0.06), rgba(255,210,240,0.04));
+  filter: blur(18px) saturate(1.05);
+  transition: opacity 220ms ease, filter 220ms ease;
+  opacity: 0;
 }
 
-nav a::after {
-  content: '';
-  display: block;
-  margin: 0 auto;
-  width: 0%;
-  height: 2px;
-  background: var(--accent);
-  transition: width var(--transition);
-}
-
-nav a:hover::after {
-  width: 80%;
-}
-
-/* Responsive: en móvil sí se apilan */
-@media (max-width: 700px) {
-  nav ul {
-    flex-direction: column;
-    gap: 0.8rem;
-    padding: 0.8rem;
-  }
-  nav li {
-    width: 100%;
-  }
-  nav a {
-    width: 100%;
-    text-align: center;
-    font-size: 1rem;
-    padding: 0.7rem 0.5rem;
-  }
-}
-
-
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  animation: fadeIn 1.5s cubic-bezier(.4,0,.2,1);
-}
-
-section {
-  margin-bottom: 3rem;
-  animation: fadeIn 1.7s cubic-bezier(.4,0,.2,1);
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.2rem;
-  border-left: 4px solid var(--accent);
-  padding-left: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-article {
-  background: var(--card-bg);
-  border-radius: 16px;
-  padding: 1.5rem 1.2rem;
-  box-shadow: 0 3px 12px var(--shadow);
-  transition: transform var(--transition), box-shadow var(--transition);
-  margin-bottom: 1.5rem;
-  animation: fadeIn 2s cubic-bezier(.4,0,.2,1);
-}
-
-article:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 8px 24px var(--shadow);
-}
-
-article h3 {
-  margin-bottom: 0.6rem;
-  font-size: 1.15rem;
-  font-weight: 600;
-}
-
-.badge {
-  display: inline-block;
-  padding: 0.35rem 0.7rem;
-  border-radius: 8px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  margin-bottom: 0.6rem;
-  animation: fadeIn 0.6s cubic-bezier(.4,0,.2,1);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.97);}
-  to { opacity: 1; transform: scale(1);}
-}
-
-.node { background-color: var(--badge-node); }
-.no-node { background-color: var(--badge-no-node); color: white; }
-.ruby { background-color: var(--badge-ruby); color: white; }
-.standalone { background-color: var(--badge-standalone); color: white; }
-
-#reflection p {
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
-  opacity: 0.92;
-}
-
-footer {
-  text-align: center;
-  color: #636e72;
-  font-size: 0.9rem;
-  margin-top: 2.5rem;
-  padding-bottom: 1.5rem;
-  opacity: 0.8;
-  animation: fadeIn 2.2s cubic-bezier(.4,0,.2,1);
-}
-
-/* Modern dark mode styles */
-body.dark-mode {
-  --bg: #181a20;
-  --text: #f5f6fa;
-  --card-bg: #23262f;
-  --accent: #74b9ff;
-  --shadow: rgba(116, 185, 255, 0.10);
-}
-
-body.dark-mode header p,
-body.dark-mode p,
-body.dark-mode footer {
-  color: #cfd8dc !important; /* Mejor contraste para textos secundarios */
-  opacity: 0.95;
-}
-
-body.dark-mode .badge {
-  color: #ffffff !important; /* Texto oscuro sobre badges claros */
+/* show glow when hovered */
+.glass-card:hover::after{
   opacity: 1;
+  filter: blur(14px) saturate(1.15);
 }
 
-body.dark-mode .no-node,
-body.dark-mode .ruby,
-body.dark-mode .standalone {
-  color: #fff !important; /* Texto blanco sobre badges oscuros */
+/* inner content above glow */
+.glass-card > *{ position:relative; z-index:2; }
+
+/* text */
+article p{ color: #24303a; margin-top:0.6rem; font-size:0.98rem; line-height:1.5; }
+
+/* responsive layout and grid spacing */
+@media (max-width:1000px){
+  .grid{ grid-template-columns: 1fr; }
+  .main-wrap{ margin-top: -20px; padding-top: 36px; }
 }
 
-body.dark-mode h2,
-body.dark-mode h3 {
-  color: #f5f6fa !important; /* Títulos claros */
+/* small type pill style if needed */
+.type-pill{ display:inline-block; padding:0.28rem 0.5rem; border-radius:999px; font-weight:700; background: rgba(255,255,255,0.9); color:#071; }
 
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .glass-card, .glass-card::after, .scroll-cta { transition: none !important; animation: none !important; transform: none !important; }
 }
 
-/* Dark mode toggle button */
-#dark-mode-toggle {
-  position: fixed;
-  top: 2rem;
-  right: 2rem;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  box-shadow: 0 2px 8px var(--shadow);
-  cursor: pointer;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background var(--transition), box-shadow var(--transition);
-  z-index: 100;
-  outline: none;
+/* utility: slightly darker text for headings inside cards */
+.glass-card h3{ color:#081421; display:flex; align-items:center; gap:0.6rem; }
+
+/* small spacing */
+.section-title{ margin-bottom: 0.8rem; display:block; }
+ 
+.section-image {
+  width: 100%;
+  max-width: 720px;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(255, 180, 210, 0.15);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#dark-mode-toggle:hover {
-  background: #00b894;
-  box-shadow: 0 4px 16px var(--shadow);
-}
-
-/* Delicate fade-in for all elements */
-* {
-  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+.section-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(255, 180, 210, 0.25);
 }
